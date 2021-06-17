@@ -1,0 +1,43 @@
+# No se debe olvidar importar la libreria
+import numpy as np
+
+print("Calculadora de producto de matrices \n")
+# Se ingresa las dimensiones de las dos matrices
+f1 = int(input("Ingrese el numero de filas de la primera matriz: "))
+c1 = int(input("Ingrese el numero de columnas de la primera matriz: "))
+f2 = int(input("Ingrese el numero de filas de la segunda matriz: "))
+c2 = int(input("Ingrese el numero de columnas de la segunda matriz: "))
+# Se verifica que la multiplicacion sea posible
+if(c1 != f2):
+    print("La multiplicacion no esta definida para matrices de estas dimensiones \n")
+    print("el numero de columnas de la primera matriz debe ser igual al numero de filas de la segunda \n")
+else:
+    print("La multiplicacion es valida con estas dimensiones \n")
+    # Se ingresa los elementos de la primera matriz a modo de lista
+    m1 = []
+    print("Ingrese los elementos de la primera matriz en orden de filas \n")
+    for i in range(f1):
+        a = []
+        for j in range(c1):
+            a.append(int(input()))
+        m1.append(a)
+    # Se convierte la lista en un numpy array y se la imprime
+    M1 = np.array(m1)
+    print ("La primera matriz es: \n")
+    print (M1)
+    # Se ingresa los elementos de la segunda matriz a modo de lista
+    m2 = []
+    print("\nIngrese los elementos de la segunda matriz en orden de filas \n")
+    for i in range(f2):
+        b = []
+        for j in range(c2):
+            b.append(int(input()))
+        m2.append(b)
+    # Se convierte la lista en un numpy array y se la imprime
+    M2 = np.array(m2)
+    print ("La segunda matriz es: \n")
+    print (M2)
+    # Se utiliza numpy para multiplicar las matrices y se imprime el resultado
+    print("\nEl resultado de la multiplicacion es:\n")
+    MR = np.matmul(M1, M2)
+    print (MR)
